@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An invitation to celebrate Isaac Kwesi Alavi's MSc Geographic Information Systems graduation.">
+  <title>Beyond the Coordinates — Isaac's Graduation</title>
+  <style>
+    :root { --ink:#082c3a; --navy:#092b49; --ocean:#126675; --sage:#b8d6ca; --mist:#edf6f2; --paper:#fbfcf8; --gold:#d5aa5d; --line:rgba(8,44,58,.16); --display:"Aptos Display","Segoe UI Variable Display","Segoe UI",sans-serif; --sans:Aptos,"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.55; overflow-x:hidden; } a { color:inherit; }
+    .skip { position:fixed; top:-5rem; left:1rem; z-index:30; padding:.7rem 1rem; background:#fff; border-radius:999px; box-shadow:0 8px 24px rgba(8,44,58,.16); } .skip:focus { top:1rem; }
+    .topo { position:fixed; inset:0; z-index:-1; opacity:.46; background-image:repeating-radial-gradient(ellipse at 80% 10%,transparent 0 23px,rgba(18,102,117,.1) 24px 25px,transparent 26px 38px); background-size:330px 260px; pointer-events:none; }
+    .hero { min-height:100svh; position:relative; display:grid; align-content:center; padding:4.5rem clamp(1.25rem,7vw,8rem) 3rem; isolation:isolate; background:linear-gradient(155deg,#eaf5f1 0%,#fbfcf8 47%,#d8ebe4 100%); }
+    .eyebrow,.stop-number { margin:0 0 1rem; color:var(--ocean); font-size:.73rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; } h1,h2,h3 { font-family:var(--display); }
+    .hero h1 { max-width:1000px; margin:0; color:var(--navy); font-size:clamp(3.2rem,9vw,8rem); font-weight:720; letter-spacing:-.065em; line-height:.9; } .hero h1 em { color:var(--ocean); font-style:normal; font-weight:500; } .lede { max-width:37rem; margin:1.5rem 0 2rem; font-size:clamp(1.05rem,2vw,1.32rem); }
+    .date-line { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; font-weight:750; letter-spacing:.03em; } .date-line span { width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 6px rgba(213,170,93,.18); }
+    .actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2rem; } .button { appearance:none; border:1px solid var(--navy); border-radius:999px; padding:.8rem 1.15rem; background:var(--navy); color:#fff; cursor:pointer; font:750 .9rem var(--sans); text-decoration:none; transition:transform .2s,background .2s; } .button:hover,.button:focus-visible { background:var(--ocean); transform:translateY(-2px); } .button.alt { background:transparent; color:var(--navy); } .button.alt:hover,.button.alt:focus-visible { background:#fff; }
+    .map-art { position:absolute; inset:0; z-index:-1; overflow:hidden; opacity:.9; } .map-art svg { position:absolute; right:-11rem; bottom:-6rem; width:min(66vw,900px); } .route { fill:none; stroke:var(--ocean); stroke-width:3; stroke-linecap:round; stroke-dasharray:7 12; animation:dash 9s linear infinite; } .pin { fill:var(--gold); stroke:var(--navy); stroke-width:3; } .map-note { fill:var(--navy); font:750 13px var(--sans); letter-spacing:.08em; } .scroll-cue { position:absolute; bottom:1.2rem; left:50%; color:var(--ocean); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; transform:translateX(-50%); }
+    main { max-width:1240px; margin:auto; padding:0 clamp(1.25rem,7vw,8rem); } .route-nav { display:none; } .stop { display:grid; grid-template-columns:minmax(0,1fr); gap:2rem; align-items:center; min-height:78vh; padding:5.5rem 0; border-top:1px solid var(--line); } .stop h2 { margin:0 0 1.25rem; color:var(--navy); font-size:clamp(2.55rem,6vw,5.2rem); font-weight:650; letter-spacing:-.06em; line-height:.94; } .stop-copy { max-width:33rem; font-size:1.05rem; }
+    .detail-card,.rsvp-card { border:1px solid var(--line); border-radius:1.4rem; background:#fff; box-shadow:0 18px 40px rgba(8,44,58,.08); } .detail-card { padding:1.5rem; } .detail-card dl { margin:0; } .detail-card dl div { display:grid; grid-template-columns:75px 1fr; gap:.5rem; padding:.85rem 0; border-bottom:1px solid var(--line); } .detail-card dt { color:var(--ocean); font-weight:800; } .detail-card dd { margin:0; } .pin-card { position:relative; padding-left:3.3rem; } .pin-card::before { position:absolute; top:1.5rem; left:1.3rem; color:var(--gold); content:'●'; font-size:1.5rem; }
+    .journey-photo { position:relative; min-height:270px; overflow:hidden; margin:0; border-radius:1.4rem; background:var(--navy); box-shadow:0 18px 40px rgba(8,44,58,.16); } .journey-photo img { display:block; width:100%; min-height:270px; height:100%; object-fit:cover; object-position:78% center; } .journey-photo figcaption { position:absolute; bottom:1rem; left:1rem; margin:0; padding:.42rem .72rem; border-radius:999px; background:rgba(8,44,58,.82); color:#fff; font-size:.78rem; font-weight:700; }
+    .place-art,.celebration-art { display:grid; min-height:270px; place-content:center; position:relative; overflow:hidden; padding:2rem; border-radius:1.4rem; color:#fff; text-align:center; } .place-art { background:linear-gradient(145deg,rgba(8,43,73,.96),rgba(18,102,117,.8)),repeating-linear-gradient(-45deg,transparent 0 18px,rgba(255,255,255,.13) 19px 20px); } .celebration-art { background:linear-gradient(145deg,rgba(184,214,202,.95),rgba(18,102,117,.78)); } .place-art::after,.celebration-art::after { position:absolute; right:11%; top:9%; color:var(--gold); content:'✦'; font-size:4rem; opacity:.9; } .place-art b,.celebration-art b { font:650 1.7rem var(--display); } .place-art span,.celebration-art span { max-width:15rem; margin-top:.4rem; }
+    .countdown { display:grid; grid-template-columns:repeat(4,1fr); gap:.55rem; margin-top:1.5rem; } .countdown div { padding:.75rem .3rem; border-radius:.85rem; background:var(--navy); color:#fff; text-align:center; } .countdown strong { display:block; font:600 clamp(1.5rem,4vw,2.5rem) var(--display); } .countdown span { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; } .celebrate { padding:1.5rem; border-radius:1.4rem; background:var(--navy); color:#fff; } .celebrate h3 { margin:.1rem 0 .6rem; font-size:2rem; font-weight:650; } .pending { display:inline-block; padding:.35rem .6rem; border:1px solid rgba(184,214,202,.55); border-radius:999px; background:rgba(184,214,202,.22); color:#d7eee6; font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .rsvp-card { padding:clamp(1.25rem,4vw,2.4rem); background:linear-gradient(145deg,#fff,#edf6f2); } .rsvp-card h3 { margin:0 0 .45rem; color:var(--navy); font-size:clamp(1.75rem,4vw,2.45rem); font-weight:650; letter-spacing:-.04em; } .rsvp-form { margin-top:1.4rem; } .form-label { display:block; margin:1rem 0 .4rem; font-weight:800; } .field { width:100%; padding:.8rem .9rem; border:1px solid rgba(8,44,58,.32); border-radius:.7rem; background:#fff; color:var(--ink); font:inherit; } .field:focus,.attendance-option input:focus-visible + span { outline:3px solid rgba(18,102,117,.35); outline-offset:2px; } .attendance-options { display:grid; gap:.65rem; } .attendance-option { display:block; cursor:pointer; } .attendance-option input { position:absolute; opacity:0; } .attendance-option span { display:block; padding:.85rem 1rem; border:1px solid rgba(8,44,58,.26); border-radius:.8rem; background:#fff; font-weight:700; transition:border-color .2s,background .2s,transform .2s; } .attendance-option input:checked + span { border-color:var(--ocean); background:#dff0eb; box-shadow:inset 4px 0 var(--ocean); } .attendance-option span:hover { transform:translateY(-1px); } .rsvp-help { max-width:34rem; margin:.3rem 0 0; color:#31505a; font-size:.9rem; } .confirmation { margin:1.1rem 0 0; padding:.9rem 1rem; border-left:4px solid var(--ocean); border-radius:.45rem; background:#e1f1e9; font-weight:700; } .confirmation[hidden],.sr-only { display:none; }
+    footer { padding:3rem 1.25rem 5rem; text-align:center; font-size:.88rem; } #confetti { position:fixed; inset:0; z-index:25; pointer-events:none; } .reveal { display:grid; position:fixed; inset:0; z-index:30; place-items:center; padding:1.5rem; background:var(--navy); transition:opacity .65s ease,visibility .65s; } .reveal[hidden] { display:none; } .reveal-card { width:min(600px,100%); padding:clamp(2.2rem,8vw,4rem) 1.5rem; border:1px solid rgba(255,255,255,.3); border-radius:2rem; background:radial-gradient(circle at 80% 15%,rgba(184,214,202,.28),transparent 28%),rgba(255,255,255,.04); color:#fff; text-align:center; } .reveal-card h2 { margin:.5rem 0 1.4rem; font-size:clamp(2.7rem,9vw,5.2rem); font-weight:650; letter-spacing:-.06em; line-height:.9; } .reveal-card .button { border-color:var(--gold); background:var(--gold); color:var(--navy); }
+    @keyframes dash { to { stroke-dashoffset:-190; } } @media (min-width:780px) { .stop { grid-template-columns:1.05fr .95fr; gap:5rem; } .stop:nth-of-type(even) .stop-content { order:2; } .route-nav { display:flex; position:fixed; top:50%; right:1.4rem; z-index:5; flex-direction:column; gap:.6rem; transform:translateY(-50%); } .route-nav a { width:13px; height:13px; border:2px solid var(--ocean); border-radius:50%; font-size:0; } .route-nav a:hover,.route-nav a:focus { background:var(--ocean); } } @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+    .memory-fields { margin:1.5rem 0; padding:1.25rem; border:1px solid rgba(18,102,117,.22); border-radius:1rem; background:rgba(255,255,255,.62); }
+    .memory-fields .form-label:first-child { margin-top:0; color:var(--navy); }
+    .upload-field { padding:.58rem .7rem; cursor:pointer; }
+    .hero { min-height:min(100svh,760px); }
+    .stop { min-height:0; padding:clamp(3.75rem,7vw,5.5rem) 0; }
+    .permission-fields { display:grid; gap:.65rem; margin:1.25rem 0 0; padding:1rem 0 0; border:0; border-top:1px solid var(--line); }
+    .permission-fields legend { padding:0; }
+    .permission-fields label { display:flex; gap:.6rem; align-items:flex-start; cursor:pointer; font-size:.92rem; }
+    .permission-fields input { width:1.05rem; height:1.05rem; margin-top:.2rem; accent-color:var(--ocean); }
+    .journey-photo { min-height:0; aspect-ratio:7 / 5; }
+    .journey-photo img { min-height:0; height:100%; object-fit:cover; object-position:center; }
+    @media (min-width:780px) { #journey { grid-template-columns:.78fr 1.22fr; } }
+    @media (max-width:779px) { .hero { min-height:0; padding-top:5.5rem; padding-bottom:4rem; } .stop { gap:1.5rem; padding:3.75rem 0; } .scroll-cue { display:none; } }
+    /* Final palette: white and navy lead; green is only a quiet geographic accent. */
+    :root { --ink:#071f35; --navy:#082b50; --ocean:#1d527a; --sage:#dce8ef; --mist:#f4f8fb; --paper:#fff; --gold:#c79a4c; --line:rgba(8,43,80,.16); }
+    body { background:#fff; }
+    .topo { opacity:.32; background-image:repeating-radial-gradient(ellipse at 80% 10%,transparent 0 23px,rgba(29,82,122,.12) 24px 25px,transparent 26px 38px); }
+    .gis-grid { position:fixed; inset:0; z-index:-2; pointer-events:none; background-image:linear-gradient(rgba(8,43,80,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(8,43,80,.045) 1px,transparent 1px); background-size:52px 52px; mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent); }
+    .hero { background:linear-gradient(145deg,#fff 0%,#f6f9fc 52%,#e8f0f6 100%); }
+    .hero::after { position:absolute; right:clamp(1rem,7vw,8rem); top:1.4rem; color:rgba(8,43,80,.46); content:'N  57°09′N  ·  2°06′W'; font-size:.66rem; font-weight:800; letter-spacing:.16em; }
+    .detail-card,.rsvp-card { background:#fff; }
+    .rsvp-card { background:linear-gradient(145deg,#fff,#f5f8fb); }
+    .attendance-option input:checked + span { background:#edf4f8; }
+    .confirmation { background:#eef5fa; }
+    .celebration-art { background:linear-gradient(145deg,#173f64,#376a8b); }
+    .pending { border-color:rgba(220,232,239,.7); background:rgba(220,232,239,.18); color:#eef7fb; }
+    .progress-map { display:none; }
+    @media (min-width:780px) {
+      .route-nav { display:none; }
+      .progress-map { display:block; position:fixed; top:50%; right:clamp(.3rem,2vw,1.8rem); z-index:12; width:154px; height:350px; transform:translateY(-50%); }
+      .progress-map svg { position:absolute; left:0; top:0; width:85px; height:350px; overflow:visible; }
+      .map-track { fill:none; stroke:#c5d3df; stroke-width:2.5; stroke-linecap:round; }
+      .map-segment { fill:none; stroke:var(--ocean); stroke-width:3.2; stroke-linecap:round; stroke-dasharray:145; stroke-dashoffset:145; transition:stroke-dashoffset .7s ease; }
+      .map-segment.is-active { stroke-dashoffset:0; }
+      .map-pin { position:absolute; left:0; display:flex; align-items:center; gap:.45rem; color:var(--navy); font-size:.67rem; font-weight:850; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+      .map-pin span { display:grid; width:27px; height:27px; place-items:center; border:2px solid #9eb4c5; border-radius:50%; background:#fff; color:#54728a; box-shadow:0 3px 10px rgba(8,43,80,.1); transition:background .25s,border-color .25s,color .25s,transform .25s; }
+      .map-pin b { max-width:75px; line-height:1.08; }
+      .map-pin:hover span,.map-pin:focus-visible span,.map-pin.is-active span { border-color:var(--navy); background:var(--navy); color:#fff; transform:scale(1.12); }
+      .map-pin.is-active b { color:var(--ocean); }
+      .map-pin:nth-of-type(1) { top:19px; left:30px; }.map-pin:nth-of-type(2) { top:108px; left:57px; }.map-pin:nth-of-type(3) { top:202px; left:16px; }.map-pin:nth-of-type(4) { top:292px; left:45px; }
+    }
+    @media (min-width:780px) and (max-width:1040px) { .progress-map { right:.1rem; transform:translateY(-50%) scale(.84); transform-origin:right center; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#journey">Skip to invitation details</a><div class="gis-grid" aria-hidden="true"></div><div class="topo" aria-hidden="true"></div><canvas id="confetti" aria-hidden="true"></canvas>
+  <section class="reveal" id="reveal" aria-labelledby="reveal-title"><div class="reveal-card"><p class="eyebrow" style="color:#d7eee6">A new coordinate has been reached</p><h2 id="reveal-title">You’re invited<br>to celebrate.</h2><button class="button" id="openInvite" type="button">Open invitation</button></div></section>
+  <header class="hero" id="top"><div><p class="eyebrow">MSc Geographic Information Systems · University of Aberdeen</p><h1>Beyond the<br><em>Coordinates.</em></h1><p class="lede">Join us as Isaac Kwesi Alavi marks the next point on his map: graduation.</p><p class="date-line"><span></span>Monday 23 November 2026 · 1:30 PM</p><div class="actions"><a class="button" href="#big-day">Explore the day</a><button class="button alt" id="shareTop" type="button">Share invitation</button></div></div><div class="map-art" aria-hidden="true"><svg viewBox="0 0 800 600"><path class="route" d="M90 480C125 250 290 480 355 313S555 130 682 220"/><circle class="pin" cx="90" cy="480" r="12"/><circle class="pin" cx="355" cy="313" r="12"/><circle class="pin" cx="682" cy="220" r="12"/><text class="map-note" x="52" y="520">BEGIN</text><text class="map-note" x="623" y="185">ABERDEEN</text></svg></div><p class="scroll-cue">Follow the route ↓</p></header>
+  <nav class="route-nav" aria-label="Invitation route"><a href="#journey">The Journey</a><a href="#big-day">The Big Day</a><a href="#celebration">The Celebration</a><a href="#rsvp">RSVP</a></nav>
+  <nav class="progress-map" aria-label="Scroll journey map"><svg viewBox="0 0 100 350" aria-hidden="true"><path class="map-track" d="M43 33 C84 62 79 83 70 122 C60 161 34 184 30 215 C27 245 52 270 59 307"/><path class="map-segment" data-map-segment="0" d="M43 33 C84 62 79 83 70 122"/><path class="map-segment" data-map-segment="1" d="M70 122 C60 161 34 184 30 215"/><path class="map-segment" data-map-segment="2" d="M30 215 C27 245 52 270 59 307"/></svg><a class="map-pin" href="#journey"><span>01</span><b>Journey</b></a><a class="map-pin" href="#big-day"><span>02</span><b>Big day</b></a><a class="map-pin" href="#celebration"><span>03</span><b>Celebrate</b></a><a class="map-pin" href="#rsvp"><span>04</span><b>RSVP</b></a></nav>
+  <main>
+    <section class="stop" id="journey"><div class="stop-content"><p class="stop-number">Stop 01 · The Journey</p><h2>A map made<br>of moments.</h2><p class="stop-copy">From curiosity to capability, every path, layer and analysis has led here. This is a small pause to celebrate Isaac’s MSc journey in Geographic Information Systems—and the beautiful possibilities ahead.</p><p class="stop-copy"><strong>Bring your best wishes and your sense of occasion.</strong></p></div><figure class="journey-photo"><img src="assets/grad.png" alt="Isaac presenting his Geographic Information Systems research"><figcaption>The journey, mapped in practice.</figcaption></figure></section>
+    <section class="stop" id="big-day"><div class="stop-content"><p class="stop-number">Stop 02 · The Big Day</p><h2>Set your compass<br>for Elphinstone Hall.</h2><p class="stop-copy">The ceremony is the central pin on this celebration map. We would be delighted to share the moment with you.</p><div class="detail-card pin-card"><dl><div><dt>Date</dt><dd>Monday 23 November 2026</dd></div><div><dt>Time</dt><dd>1:30 PM</dd></div><div><dt>Place</dt><dd>Elphinstone Hall<br>University of Aberdeen</dd></div></dl><div class="actions"><button class="button" id="calendar" type="button">Add to calendar</button><a class="button alt" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Elphinstone%20Hall%2C%20University%20of%20Aberdeen%2C%20Old%20Aberdeen">Get directions ↗</a></div></div><div class="countdown" aria-label="Countdown to ceremony"><div><strong id="days">—</strong><span>days</span></div><div><strong id="hours">—</strong><span>hours</span></div><div><strong id="mins">—</strong><span>mins</span></div><div><strong id="secs">—</strong><span>secs</span></div></div></div><div class="place-art" aria-label="A stylised map marker illustration"><b>One landmark.<br>Many memories.</b><span>Elphinstone Hall awaits.</span></div></section>
+    <section class="stop" id="celebration"><div class="stop-content"><p class="stop-number">Stop 03 · The Celebration</p><h2>Then, the<br>afterglow.</h2><p class="stop-copy">We hope you can continue the celebration with us after the ceremony. The details are still being mapped.</p><div class="celebrate"><span class="pending">To be confirmed</span><h3>Post-ceremony dinner</h3><p style="margin:0"><strong>Venue and time: To be confirmed.</strong> Please keep the evening in view; an update will be shared once the route is finalised.</p></div><div class="actions"><button class="button" id="celebrateBtn" type="button">Send some confetti</button><a class="button alt" id="whatsapp" href="#">Share on WhatsApp</a></div></div><div class="celebration-art" aria-label="A celebration graphic"><b>Save a toast<br>for later.</b><span>More details will follow.</span></div></section>
+    <section class="stop" id="rsvp"><div class="stop-content"><p class="stop-number">Stop 04 · RSVP</p><h2>Plot your place<br>on the route.</h2><p class="stop-copy">Please confirm your attendance, leave your best wishes and share photos through our secure response form.</p><p class="rsvp-help">The form includes your ceremony or dinner choice, wishes, photo uploads and separate permission to feature each.</p></div><div class="rsvp-card"><h3>Ready to celebrate?</h3><p class="rsvp-help">Open the graduation response form to RSVP, share a message and upload your favourite pictures of Isaac.</p><div class="actions"><a class="button" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfXGpVsCm7NKCTsrg37x-4G-NMPyNCh6zpdtnJt6jVUDEq8Yw/viewform?usp=publish-editor">RSVP, wishes &amp; photos ↗</a></div><p class="rsvp-help">It opens in a new tab. Google sign-in is required only when adding photos.</p></div><form id="rsvpForm" hidden><p class="confirmation" id="rsvpConfirmation" hidden></p></form></section>
+  </main>
+  <footer><p class="eyebrow">Beyond the Coordinates</p><p>With love and anticipation, for Isaac Kwesi Alavi.</p><button class="button alt" id="shareFooter" type="button">Share this invitation</button></footer>
+  <script>
+    const ceremony = new Date('2026-11-23T13:30:00+00:00'), pad = n => String(n).padStart(2,'0');
+    function tick(){const s=Math.floor(Math.max(0,ceremony-new Date())/1000);document.querySelector('#days').textContent=Math.floor(s/86400);document.querySelector('#hours').textContent=pad(Math.floor(s%86400/3600));document.querySelector('#mins').textContent=pad(Math.floor(s%3600/60));document.querySelector('#secs').textContent=pad(s%60)} tick();setInterval(tick,1000);
+    const reveal=document.querySelector('#reveal');document.querySelector('#openInvite').addEventListener('click',()=>{reveal.hidden=true});
+    const shareText="You're invited to Isaac Kwesi Alavi's MSc GIS graduation — Monday 23 November 2026, 1:30 PM at Elphinstone Hall, University of Aberdeen. RSVP for the ceremony, dinner, or both.";
+    async function share(){if(navigator.share){try{await navigator.share({title:'Beyond the Coordinates',text:shareText,url:location.href})}catch(_){}}else{try{await navigator.clipboard.writeText(location.href);alert('Invitation link copied to your clipboard.')}catch(_){alert('Copy this invitation link: '+location.href)}}} document.querySelector('#shareTop').addEventListener('click',share);document.querySelector('#shareFooter').addEventListener('click',share);document.querySelector('#whatsapp').href='https://wa.me/?text='+encodeURIComponent(shareText+' '+location.href);
+    document.querySelector('#calendar').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','UID:isaac-alavi-graduation-20261123','DTSTAMP:20260101T000000Z','DTSTART:20261123T133000Z','DTEND:20261123T153000Z','SUMMARY:Isaac Kwesi Alavi — MSc GIS Graduation','LOCATION:Elphinstone Hall, University of Aberdeen','DESCRIPTION:Graduation ceremony for Isaac Kwesi Alavi.','END:VEVENT','END:VCALENDAR'].join('\r\n'),link=document.createElement('a');link.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));link.download='isaac-alavi-graduation.ics';link.click();URL.revokeObjectURL(link.href)});
+    const canvas=document.querySelector('#confetti'),context=canvas.getContext('2d');let pieces=[];function party(){canvas.width=innerWidth;canvas.height=innerHeight;pieces=Array.from({length:130},()=>({x:innerWidth/2+(Math.random()-.5)*140,y:innerHeight*.45,vx:(Math.random()-.5)*10,vy:-Math.random()*11-4,r:4+Math.random()*7,c:['#d5aa5d','#b8d6ca','#126675','#ffffff'][Math.floor(Math.random()*4)],a:1}));requestAnimationFrame(draw)}function draw(){context.clearRect(0,0,canvas.width,canvas.height);pieces.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.23;p.a-=.012;context.globalAlpha=Math.max(0,p.a);context.fillStyle=p.c;context.fillRect(p.x,p.y,p.r,p.r)});context.globalAlpha=1;pieces=pieces.filter(p=>p.a>0&&p.y<canvas.height+20);if(pieces.length)requestAnimationFrame(draw)}document.querySelector('#celebrateBtn').addEventListener('click',party);
+    const rsvpForm=document.querySelector('#rsvpForm'),confirmation=document.querySelector('#rsvpConfirmation');rsvpForm.addEventListener('submit',async event=>{event.preventDefault();if(!rsvpForm.reportValidity())return;const name=document.querySelector('#guestName').value.trim(),attendance=new FormData(rsvpForm).get('attendance'),formData=new FormData(rsvpForm);try{const response=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(formData).toString()});if(!response.ok)throw new Error('Submission unavailable');confirmation.textContent=`Thank you, ${name}. Your RSVP for ${attendance} has been sent. We look forward to celebrating with you!`}catch(_){localStorage.setItem('isaacGraduationRsvp',JSON.stringify({name,attendance,submittedAt:new Date().toISOString()}));confirmation.textContent=`Thank you, ${name}. Your RSVP for ${attendance} has been recorded on this device and will submit once the invitation is hosted on Netlify.`}confirmation.hidden=false;party()});
+  </script>
+  <script>
+    // File uploads need multipart form data; this capture handler supersedes the text-only fallback above.
+    rsvpForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if (!rsvpForm.reportValidity()) return;
+      const name = document.querySelector('#guestName').value.trim();
+      const attendance = new FormData(rsvpForm).get('attendance');
+      const files = [...rsvpForm.querySelectorAll('input[type="file"]')].flatMap(input => [...input.files]);
+      const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+      if (totalSize > 8 * 1024 * 1024) {
+        confirmation.textContent = 'Please choose photos totalling less than 8 MB, then try again.';
+        confirmation.hidden = false;
+        return;
+      }
+      const endpoint = window.FORMSPREE_ENDPOINT || '';
+      if (!endpoint) {
+        localStorage.setItem('isaacGraduationRsvp', JSON.stringify({name, attendance, wishes:document.querySelector('#bestWishes').value.trim(), submittedAt:new Date().toISOString()}));
+        confirmation.textContent = `Thank you, ${name}. Your RSVP and wishes have been saved on this device. The invitation host has not connected a response service yet.`;
+        confirmation.hidden = false;
+        party();
+        return;
+      }
+      try {
+        const response = await fetch(endpoint, { method:'POST', headers:{Accept:'application/json'}, body:new FormData(rsvpForm) });
+        if (!response.ok) throw new Error('Submission unavailable');
+        confirmation.textContent = `Thank you, ${name}. Your RSVP for ${attendance}, wishes and photos have been sent.`;
+      } catch (_) {
+        localStorage.setItem('isaacGraduationRsvp', JSON.stringify({name, attendance, wishes:document.querySelector('#bestWishes').value.trim(), submittedAt:new Date().toISOString()}));
+        confirmation.textContent = `Thank you, ${name}. Your RSVP and wishes have been saved on this device. Please try again later.`;
+      }
+      confirmation.hidden = false;
+      party();
+    }, true);
+  </script>
+  <script>
+    // The route map advances as the guest moves through the invitation.
+    const journeyStops = [...document.querySelectorAll('main .stop')];
+    const mapPins = [...document.querySelectorAll('.map-pin')];
+    const mapSegments = [...document.querySelectorAll('.map-segment')];
+    function setRouteProgress(index) {
+      mapPins.forEach((pin, pinIndex) => pin.classList.toggle('is-active', pinIndex <= index));
+      mapSegments.forEach((segment, segmentIndex) => segment.classList.toggle('is-active', segmentIndex < index));
+    }
+    setRouteProgress(0);
+    if ('IntersectionObserver' in window) {
+      const routeObserver = new IntersectionObserver(entries => {
+        const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setRouteProgress(journeyStops.indexOf(visible.target));
+      }, { threshold:[.35,.55,.75], rootMargin:'-18% 0px -28% 0px' });
+      journeyStops.forEach(stop => routeObserver.observe(stop));
+    }
+  </script>
+</body>
+</html>
